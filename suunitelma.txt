@@ -1,0 +1,21 @@
+Roquelike
+Suunnitelma versio 1
+
+Pelissä pitää kiivetä vuoren sisällä. Ilma heikkenee ylöspäin mennessä. Pelin on voittanut, jos pääsee tasolle 23. Elämiä on 59. Pelaajaa merkkaa @- merkki. Portaat ylös on >-merkki ja <-merkki vie alas. Ovi on #-merkki.
+Oven voi lukita lukitsemisen paperikäärölla. Pelin tarkoitus on väistellä hirviöitä ja seikkailla.
+Kääröjä:
+	lukitseminen
+	hengitys
+	teleporttaaminen
+	tunnistus
+Taikajuomia:
+	myrkky
+	illuusio
+	vihollisenkutsu
+	elpyminen
+Hirviöitä:
+	Örkki, "Ö", hakkaa ja tulee kohti, helppo.
+	Apina, "A", kutsuu muita hirviöitä ja häiritsee kiertämällä pelaajaa.
+	Huutaja, "H", huutaa muilta tasoilta hirviöitä.
+	Vesi, "+", Eloton hirviö johon on mahdollista hukkua.
+	Hakkaaja, "/", hakkaa 3 elämää yhdellä iskulla.
