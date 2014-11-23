@@ -7,7 +7,7 @@ class Liikkuja(Sprite):
 
     def liiku(self, suunta):
         uusix = self.x + suunta[0]
-        uusix = self.y + suunta[1]
+        uusiy = self.y + suunta[1]
         if self.taso.kartta[uusix][uusiy].tyhja:
             self.x = uusix
             self.y = uusiy

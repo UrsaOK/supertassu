@@ -48,7 +48,7 @@ def main():
         nappula = libtcod.console_wait_for_keypress(True)
 
         if nappula.vk == libtcod.KEY_ESCAPE:
-            break
+            return
         elif nappula.vk == libtcod.KEY_RIGHT:
             pelaaja.liiku((1, 0))
         elif nappula.vk == libtcod.KEY_LEFT:
@@ -56,7 +56,7 @@ def main():
         elif nappula.vk == libtcod.KEY_UP:
             pelaaja.liiku((0, -1))
         elif nappula.vk == libtcod.KEY_DOWN:
-            pelaaja.liiku(0, 1)
+            pelaaja.liiku((0, 1))
 
 try:
     main()

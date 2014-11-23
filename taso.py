@@ -1,4 +1,5 @@
 from kartta import *
+import random
 
 class Taso:
     def __init__(self, vaikeus):
