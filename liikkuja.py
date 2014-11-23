@@ -1,8 +1,8 @@
-from merkki import Merkki
+from merkki import Sprite
 
-class Liikkuja(Merkki):
+class Liikkuja(Sprite):
     def __init__(self, x, y, merkki, taso):
-        super(self, Liikkuja).__init__(x, y, merkki)
+        super(Liikkuja, self).__init__(x, y, merkki)
         self.taso = taso
 
     def liiku(self, suunta):
