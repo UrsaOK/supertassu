@@ -5,6 +5,7 @@ class Taso:
     def __init__(self, vaikeus):
 
         self.kartta = Kartta()
+#       self.kiinni = False
         self.generoi()
 
         self.vaikeus = vaikeus
@@ -42,4 +43,36 @@ class Taso:
             self.helppo = True
 
     def generoi(self):
-    	self.kartta[20][20] = SEINA
+        p = (0, -1)
+        e = (0, 1)
+        i = (1, 0)
+        l = (-1, 0)
+
+        x = random.randint(1, 80)
+        y = random.randint(1, 50)
+
+    	for _ in range(50):
+            self.kartta[x][y] = SUPERSEINA
+
+            suunnat = (p, e, i, l)
+            hyvyydet = (1, 1, 1, 1)
+
+            suunta = chooseWeighted(suunnat, hyvyydet)
+
+            xliiku, yliiku = suunta
+            x += xliiku
+            y += yliiku
+
+def chooseWeighted(jutut, painotukset):
+    summa = sum(painotukset)
+    acc = 0
+
+    valittu = random.random()
+
+    for i, p in enumerate(painotukset):
+        normalisoitu_paino = float(p) / summa
+        acc += normalisoitu_paino
+        if acc > valittu:
+            return jutut[i]
+
+
