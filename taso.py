@@ -5,7 +5,7 @@ class Taso:
     def __init__(self, vaikeus):
 
         self.kartta = Kartta()
-#       self.kiinni = False
+        self.superseinita()
         self.generoi()
 
         self.vaikeus = vaikeus
@@ -42,20 +42,45 @@ class Taso:
         else:
             self.helppo = True
 
+    def superseinita(self):
+        for y in range(50):
+            self.kartta[0][y] = SUPERSEINA
+        for x in range(80):
+            self.kartta[x][0] = SUPERSEINA
+        for y in range(50):
+            self.kartta[79][y] = SUPERSEINA
+        for x in range(80):
+            self.kartta[x][49] = SUPERSEINA
+
+
     def generoi(self):
         p = (0, -1)
         e = (0, 1)
         i = (1, 0)
         l = (-1, 0)
 
-        x = random.randint(1, 80)
-        y = random.randint(1, 50)
 
-    	for _ in range(50):
-            self.kartta[x][y] = SUPERSEINA
+        x = random.randint(1, 80-2)
+        y = random.randint(1, 50-2)
+
+    	for _ in range(1000):
+            self.kartta[x][y] = SEINA
 
             suunnat = (p, e, i, l)
-            hyvyydet = (1, 1, 1, 1)
+            hyvyydet = []
+            for s in suunnat:
+                kohdex = s[0] + x
+                kohdey = s[1] + y
+                laskuri = 0
+                if self.kartta[kohdex][kohdey] == SUPERSEINA:
+                    hyvyydet.append(0)
+                    continue
+                for naapuri in suunnat:
+                    naapurix = naapuri[0] + kohdex
+                    naapuriy = naapuri[1] + kohdey
+                    if self.kartta[naapurix][naapuriy] == SEINA:
+                        laskuri += 1
+                hyvyydet.append(5 - laskuri)
 
             suunta = chooseWeighted(suunnat, hyvyydet)
 
