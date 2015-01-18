@@ -4,8 +4,11 @@ import random
 class Taso:
     def __init__(self, vaikeus):
 
+        print("taso init: luodaan kartta")
         self.kartta = Kartta()
+        print("taso init: superseinita")
         self.superseinita()
+        print("taso init: generoi")
         self.generoi()
 
         self.vaikeus = vaikeus
@@ -63,11 +66,14 @@ class Taso:
         x = random.randint(1, 80-2)
         y = random.randint(1, 50-2)
 
+        print("taso generoi: tuhannen looppi alkaa")
+
     	for _ in range(1000):
             self.kartta[x][y] = SEINA
 
             suunnat = (p, e, i, l)
             hyvyydet = []
+            print("taso generoi: looppi: lasketaan painotukset ja piirretaan SEINAt")
             for s in suunnat:
                 kohdex = s[0] + x
                 kohdey = s[1] + y
@@ -87,6 +93,8 @@ class Taso:
             xliiku, yliiku = suunta
             x += xliiku
             y += yliiku
+
+        print("taso generoi: looppi loppui")    
 
 def chooseWeighted(jutut, painotukset):
     summa = sum(painotukset)

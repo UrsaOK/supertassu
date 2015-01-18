@@ -4,6 +4,7 @@ import traceback
 import time
 from taso import Taso
 from liikkuja import Liikkuja
+import getpass
 
 ####################################################################
 #                     ROQUELIKE - BY SUPERTASSU                    #
@@ -16,11 +17,7 @@ def main():
     SCREEN_HEIGHT = 50
      
     LIMIT_FPS = 20  #20 frames-per-second maximum
-     
 
-    print("[INFO] Tervetuloa peliin.")
-    time.sleep(1)
-    print("[INFO] Sammuta peli painamalla ESC.")
     raw_input("[INFO] Paina ENTER startataksesi.")
 
     libtcod.console_set_custom_font('arial10x10.png', libtcod.FONT_TYPE_GREYSCALE | libtcod.FONT_LAYOUT_TCOD)
@@ -33,17 +30,24 @@ def main():
     taso = Taso(0)
     pelaaja = Liikkuja(1, 1, '@', taso)
 
+    print("[DEBUG] LOOPPI ALKAA")
 
     while not libtcod.console_is_window_closed():
      
         libtcod.console_set_default_foreground(0, libtcod.white)
+
+        print("[DEBUG] DRAW FUNKTIOTA KUTSUTAAN")
 
         taso.kartta.draw(0)
 
         pelaaja.draw(0)
         libtcod.console_flush()
 
+        print("[DEBUG] odotetaan nappulaa")
+
         nappula = libtcod.console_wait_for_keypress(True)
+
+        print("[DEBUG] Nappula saatu")
 
         if nappula.vk == libtcod.KEY_ESCAPE:
             return
@@ -58,7 +62,6 @@ def main():
 
 try:
     main()
-    raw_input()
 except Exception,e:
     print traceback.print_exc()
     raw_input()
