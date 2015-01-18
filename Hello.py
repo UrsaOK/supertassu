@@ -5,6 +5,10 @@ import time
 from taso import Taso
 from liikkuja import Liikkuja
 
+####################################################################
+#                     ROQUELIKE - BY SUPERTASSU                    #
+####################################################################
+
 def main():
 
     #actual size of the window
@@ -17,19 +21,13 @@ def main():
     print("[INFO] Tervetuloa peliin.")
     time.sleep(1)
     print("[INFO] Sammuta peli painamalla ESC.")
-    x = raw_input("[INFO] Paina ENTER startataksesi.")
+    raw_input("[INFO] Paina ENTER startataksesi.")
 
     libtcod.console_set_custom_font('arial10x10.png', libtcod.FONT_TYPE_GREYSCALE | libtcod.FONT_LAYOUT_TCOD)
      
     libtcod.console_init_root(SCREEN_WIDTH, SCREEN_HEIGHT, 'ROQUELIKE', False)
      
     libtcod.sys_set_fps(LIMIT_FPS)
-
-    # time.sleep(10)
-
-    print("[INFO] Setting Full Screen")
-
-#    libtcod.console_set_fullscreen(True)
 
 
     taso = Taso(0)
@@ -60,6 +58,7 @@ def main():
 
 try:
     main()
+    raw_input()
 except Exception,e:
     print traceback.print_exc()
     raw_input()
