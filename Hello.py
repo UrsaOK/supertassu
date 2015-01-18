@@ -59,6 +59,8 @@ def main():
             pelaaja.liiku((0, -1))
         elif nappula.vk == libtcod.KEY_DOWN:
             pelaaja.liiku((0, 1))
+        else:
+            print("tuntematon nappain")
 
 try:
     main()
