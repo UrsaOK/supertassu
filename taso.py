@@ -19,6 +19,8 @@ class Taso:
         self.spawn_hakkaaja = False
         self.helppo = False
 
+        self.alusta_hirviot()
+
     def alusta_hirviot(self): 
         if self.vaikeus == 1:
             self.helppo = True
