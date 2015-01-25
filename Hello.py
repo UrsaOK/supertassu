@@ -8,6 +8,8 @@ import getpass
 
 ####################################################################
 #                     ROQUELIKE - BY SUPERTASSU                    #
+#                       http://supertassu.org                      #
+#                http://github.com/UrsaOK/supertassu               #
 ####################################################################
 
 def main():
