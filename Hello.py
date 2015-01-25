@@ -4,12 +4,12 @@ import traceback
 import time
 from taso import Taso
 from liikkuja import Liikkuja
-import getpass
 
 ####################################################################
 #                     ROQUELIKE - BY SUPERTASSU                    #
 #                       http://supertassu.org                      #
 #                http://github.com/UrsaOK/supertassu               #
+#                    Licenced under BSD licence.                   #
 ####################################################################
 
 def main():
@@ -27,7 +27,6 @@ def main():
     libtcod.console_init_root(SCREEN_WIDTH, SCREEN_HEIGHT, 'ROQUELIKE', False)
      
     libtcod.sys_set_fps(LIMIT_FPS)
-
 
     taso = Taso(0)
     pelaaja = Liikkuja(1, 1, '@', taso)
